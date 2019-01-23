@@ -3,6 +3,7 @@ package ycher.taodaren.selfdialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -11,7 +12,7 @@ import ycher.taodaren.dialoglib.YDialog;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button mBtnStandard, mBtnNoBtn, mBtnShowOne, mBtnNoEdit;
+    private Button mBtnStandard, mBtnNoBtn, mBtnShowOne, mBtnNoEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +81,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setMessage("提示信息")
                 .setHint("输入框提示信息")
                 .setYesOnclickListener("获取输入文本", () -> {
-                    Toast.makeText(this, dialog.getEditTextStr(), Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
+                    if (!TextUtils.isEmpty(dialog.getEditTextStr())) {
+                        Toast.makeText(this, dialog.getEditTextStr(), Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    } else {
+                        Toast.makeText(this, "请在文本框中输入信息", Toast.LENGTH_SHORT).show();
+                    }
                 })
                 .show();
     }
