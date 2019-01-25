@@ -29,6 +29,6 @@ dependencies {
 
 ## 效果
 
-![image](https://github.com/taodaren/YcherDialog/blob/master/images/standard.png)
-![image](https://github.com/taodaren/YcherDialog/blob/master/images/no_btn.png)
-![image](https://github.com/taodaren/YcherDialog/blob/master/images/show_one.png)
+![image](http://plvrjsntv.bkt.clouddn.com/github/images/ydialog/standard.png)
+![image](http://plvrjsntv.bkt.clouddn.com/github/images/ydialog/no_btn.png)
+![image](http://plvrjsntv.bkt.clouddn.com/github/images/ydialog/show_one.png)
